@@ -1,0 +1,29 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "app-service",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/app-service/run.py",
+      "python": "${workspaceFolder}/app-service/.venv/bin/python",
+      "cwd": "${workspaceFolder}/app-service",
+      "env": { "FLASK_ENV": "development" }
+    },
+    {
+    "name": "catalogue-service",
+    "type": "debugpy",
+    "request": "launch",
+    "program": "${workspaceFolder}/catalogue-service/run.py",
+    "python": "${workspaceFolder}/catalogue-service/.venv/bin/python",
+    "cwd": "${workspaceFolder}/catalogue-service",
+    "env": { "FLASK_ENV": "development" }
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Both Services",
+      "configurations": ["app-service", "catalogue-service"]
+    }
+  ]
+}
